@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
+body {
+  font-family: "Abel", sans-serif;
+}
+
+.address {
+  font-family: "Abel", sans-serif;
+}
+
+.navbar {
+  font-family: "Abel", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-item{
+    font-family: "Abel", sans-serif;
+    margin: -9px;
+  }
+}
+
+/* NavBar.css */
+.componentHeader {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  max-height: 50px; /* Adjust as needed */
+}
+
+.menu-icon {
+  font-size: 24px; /* Adjust as needed */
+}

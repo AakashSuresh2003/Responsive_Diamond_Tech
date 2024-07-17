@@ -1,0 +1,15 @@
+.imageCom {
+  position: absolute;
+  top: 20px;
+  z-index: -1;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .imageCom {
+    height: 40%; 
+  }
+}
