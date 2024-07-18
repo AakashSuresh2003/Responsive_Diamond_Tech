@@ -3,7 +3,7 @@ import './Categories.css';
 
 export const Categories = () => {
   return (
-    <div className={`container-fluid categories-container `}>
+    <div className={`container-fluid categories-container`}>
       <div className="text-center categories-header">
         <h1>We Deal In</h1>
       </div>
