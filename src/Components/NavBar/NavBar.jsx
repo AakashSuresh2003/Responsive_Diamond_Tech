@@ -8,11 +8,10 @@ const links = [
   { text: "Wood Processing Machines", href: "/" },
   { text: "Stone Processing Machines", href: "/" },
   { text: "Laser Machines", href: "/" },
-  { text: "Company Profile", href: "/" },
+  { text: "About Us", href: "/" },
   { text: "Gallery", href: "/" },
   { text: "Service", href: "/" },
   { text: "Contact", href: "/" },
-  { text: "Careers", href: "/" },
 ];
 
 export const NavBar = () => {
@@ -25,7 +24,7 @@ export const NavBar = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    if (offset > 10) {
+    if (offset > 5) {
       setScrolled(true);
     } else {
       setScrolled(false);
@@ -39,57 +38,45 @@ export const NavBar = () => {
     };
   }, []);
 
-  const gradientStyle = {
-    background: scrolled ? "rgb(0,0,0)" : "linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))",
-    transition: "background-color 0.3s ease-out",
-    fontFamily: '"Abel", sans-serif',
-  };
-
-  const navbarStyle = {
-    opacity: scrolled ? 0.7 : 1,
-    transform: scrolled ? "translateY(-100%)" : "translateY(0)",
-    transition: "opacity 0.3s ease-out, transform 0.3s ease-out",
-    fontFamily: '"Abel", sans-serif',
-  };
-
   return (
-    <div className="container-fluid p-0">
-      <div className={`componentHeader bg-black text-white p-2 w-100 ${scrolled ? "hidden" : ""}`}>
-        <ul className="row list-unstyled w-100 m-0">
-          <li className="col-sm-12 col-md-4 text-center text-md-left">
+    <div className={`header ${scrolled ? "scrolled" : ""}`}>
+      <div className={`head ${scrolled ? "hidden" : ""}`}>
+        <ul className="Address">
+          <li>
             Gem industries, No; 140, G.N.T.Road, Puzhal, Chennai- 600066.
           </li>
-          <li className="col-sm-12 col-md-4 text-center">
+          <li>
             Call us : +91 7299211777, 9340011444
           </li>
-          <li className="col-sm-12 col-md-4 text-center text-md-right">
+          <li>
             Email : diamond_tech@yahoo.com
           </li>
         </ul>
       </div>
-      <nav className={`text-white p-2 ${scrolled ? "navbar-fixed" : ""}`} style={gradientStyle}>
-        <div className="d-flex align-items-center justify-content-between">
-          <img src={logo} alt="logo" className="logo" />
-          <FaBars className="d-md-none menu-icon" onClick={toggleMenu} />
-          <ul className={`d-none d-md-flex nav justify-content-center m-0 ${isOpen ? "open" : ""}`} style={{ fontSize: '24px' }}>
-            {links.map((link, index) => (
-              <li key={index} className="nav-item">
-                <a className="nav-link text-white px-2" href={link.href}>
-                  {link.text}
-                </a>
-              </li>
-            ))}
-          </ul>
+      <nav className="options navbar navbar-expand-md navbar-dark">
+        <div className="container-fluid ">
+          <a className="navbar-brand" href="/">
+            <img src={logo} alt="logo" className="logo" />
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            onClick={toggleMenu}
+          >
+            <FaBars />
+          </button>
+          <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
+            <ul className="navbar-nav ml-auto">
+              {links.map((link, index) => (
+                <li key={index} className="nav-item">
+                  <a className="nav-link " href={link.href}>
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <ul className={`d-md-none nav flex-column justify-content-center m-0 ${isOpen ? "open" : "d-none"}`} style={{ textAlign: 'center', fontSize: '16px' }}>
-          {links.map((link, index) => (
-            <li key={index} className="nav-item">
-              <a className="nav-link text-white px-2" href={link.href}>
-                {link.text}
-              </a>
-            </li>
-          ))}
-        </ul>
       </nav>
     </div>
   );
