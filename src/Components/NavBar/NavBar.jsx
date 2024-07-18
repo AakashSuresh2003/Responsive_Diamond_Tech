@@ -8,10 +8,9 @@ const links = [
   { text: "Wood Processing Machines", href: "/" },
   { text: "Stone Processing Machines", href: "/" },
   { text: "Laser Machines", href: "/" },
-  { text: "About Us", href: "/" },
-  { text: "Gallery", href: "/" },
+  { text: "About Us", href: "#aboutus" },
   { text: "Service", href: "/" },
-  { text: "Contact", href: "/" },
+  { text: "Contact", href: "#contactus" },
 ];
 
 export const NavBar = () => {

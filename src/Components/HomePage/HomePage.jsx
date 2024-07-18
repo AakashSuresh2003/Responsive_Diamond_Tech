@@ -18,10 +18,10 @@ export const HomePage = () => {
       <div className="categories-container">
         <Categories />
       </div>
-      <div>
+      <div id="aboutus">
         <Aboutus/>
       </div>
-      <div>
+      <div id="contactus">
         <ContactUs/>
       </div>
     </div>
