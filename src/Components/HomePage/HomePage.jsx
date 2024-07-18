@@ -5,6 +5,7 @@ import { Categories } from "../Categories/Categories";
 import './HomePage.css';
 import { Aboutus } from "../Aboutus/Aboutus";
 import { ContactUs } from "../ContactUs/ContactUs";
+import {Products} from "../Products/Products"
 
 export const HomePage = () => {
   return (
@@ -17,6 +18,9 @@ export const HomePage = () => {
       </div>
       <div className="categories-container">
         <Categories />
+      </div>
+      <div>
+        <Products/>
       </div>
       <div id="aboutus">
         <Aboutus/>
