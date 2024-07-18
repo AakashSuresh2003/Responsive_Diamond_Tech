@@ -3,6 +3,7 @@ import NavBar from "../NavBar/NavBar";
 import { HomeImage } from "../HomeImage/HomeImage";
 import { Categories } from "../Categories/Categories";
 import './HomePage.css';
+import { Aboutus } from "../Aboutus/Aboutus";
 
 export const HomePage = () => {
   return (
@@ -15,6 +16,12 @@ export const HomePage = () => {
       </div>
       <div className="categories-container">
         <Categories />
+      </div>
+      <div>
+        <Aboutus/>
+      </div>
+      <div>
+        
       </div>
     </div>
   );
