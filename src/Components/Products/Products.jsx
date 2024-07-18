@@ -5,7 +5,6 @@ import productData from "../../assets/productData.json";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";

@@ -10,7 +10,7 @@ const links = [
   { text: "Laser Machines", href: "/" },
   { text: "About Us", href: "#aboutus" },
   { text: "Service", href: "/" },
-  { text: "Contact", href: "#contactus" },
+  { text: "Contact Us", href: "#contactus" },
 ];
 
 export const NavBar = () => {

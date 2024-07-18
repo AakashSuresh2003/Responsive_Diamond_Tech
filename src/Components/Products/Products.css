@@ -71,12 +71,10 @@
   align-items: center;
 }
 
-/* 3D effect for the center slide */
 .slick-center .product_items {
   transform: scale(1.2) rotateY(0deg) translateZ(50px);
 }
 
-/* Additional responsive styling */
 @media (max-width: 1024px) {
   .head_title {
     font-size: 2rem;
