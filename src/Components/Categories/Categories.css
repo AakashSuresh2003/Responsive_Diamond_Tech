@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
 .categories-container {
   background-color: #f4f4f4;
   padding: 50px 0;
@@ -10,6 +12,7 @@
   margin-bottom: 40px;
   font-weight: 700;
   color: #444;
+  font-family: "Abel", sans-serif;
 }
 
 .categories-content {
@@ -24,6 +27,7 @@
   margin: 10px;
   text-align: center;
   flex: 1 1 300px;
+  padding-left: 1.5%;
 }
 
 .category-card {
@@ -48,9 +52,10 @@
 }
 
 .category-title {
-  font-size: 1em;
+  font-size: 1.5em;
   margin-bottom: 10px;
   font-weight: 600;
+  font-family: "Abel", sans-serif;
 }
 
 .category-description {
@@ -65,8 +70,17 @@
   }
   .category-item {
     margin: 10px 0;
+    padding-left: 10%;
   }
   .category-card {
     max-width: 90%;
+    align-items: center;
+  }
+  .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  .category-title{
+    font-size: 1.2em;
   }
 }
