@@ -4,6 +4,7 @@ import { HomeImage } from "../HomeImage/HomeImage";
 import { Categories } from "../Categories/Categories";
 import './HomePage.css';
 import { Aboutus } from "../Aboutus/Aboutus";
+import { ContactUs } from "../ContactUs/ContactUs";
 
 export const HomePage = () => {
   return (
@@ -21,7 +22,7 @@ export const HomePage = () => {
         <Aboutus/>
       </div>
       <div>
-        
+        <ContactUs/>
       </div>
     </div>
   );
