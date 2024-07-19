@@ -60,6 +60,12 @@ iframe {
   font-size: 1.5rem;
 }
 
+.btn-contactUs {
+  display: flex;
+  margin-top: 20px;
+
+}
+
 @media (max-width: 768px) {
   .content_wrapper {
     flex-direction: column;
@@ -84,6 +90,11 @@ iframe {
 
   .contact_value {
     font-size: 1.2rem;
+  }
+
+  .btn-contactUs {
+    width: 100%;
+    justify-content: center;
   }
 }
 

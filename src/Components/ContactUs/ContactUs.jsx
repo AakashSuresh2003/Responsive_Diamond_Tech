@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ContactUs.css";
+import Button from "@mui/material/Button";
+import FloatingFormModal from "../FloatingForm/FloatingForm";
 
 export const ContactUs = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="contactus_container">
       <span className="title">Contact Us</span>
@@ -28,25 +40,27 @@ export const ContactUs = () => {
             </li>
             <li>
               <span className="contact_label">Phone:</span>
-              <span className="contact_value">
-                +91 7299211777, 9340011444
-              </span>
+              <span className="contact_value">+91 7299211777, 9340011444</span>
             </li>
             <li>
               <span className="contact_label">Email:</span>
-              <span className="contact_value">
-                diamond_tech@yahoo.com
-              </span>
+              <span className="contact_value">diamond_tech@yahoo.com</span>
             </li>
             <li>
               <span className="contact_label">Our timing:</span>
               <span className="contact_value">
-                  Mon - Sat : 10:00 AM - 6:00 PM
+                Mon - Sat : 10:00 AM - 6:00 PM
               </span>
             </li>
           </ul>
+          <div className="btn-contactUs">
+            <Button variant="outlined" size="large" onClick={handleOpenModal}>
+              Enquire
+            </Button>
+          </div>
         </div>
       </div>
+      <FloatingFormModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };
