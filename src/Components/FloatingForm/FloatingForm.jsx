@@ -61,7 +61,6 @@ const FloatingFormModal = ({ isOpen, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (captchaVerified && validateForm()) {
-      // Submit form data
       console.log("Form submitted:", formData);
       onClose();
     } else if (!captchaVerified) {
