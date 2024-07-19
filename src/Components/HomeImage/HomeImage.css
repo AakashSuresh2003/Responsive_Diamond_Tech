@@ -6,19 +6,13 @@
   object-fit: cover;
   overflow: hidden;
   display: block;
+  margin-top: 2vh;
 }
 
-.categories{
-  display: block;
-  padding-top: 60vh;
-}
 
 @media (max-width: 768px) {
   .imageCom {
     height: 40%; 
-  }
-  .categories{
-    display: block;
-    padding-top: 20vh;
+  margin-top: 3.5vh;
   }
 }

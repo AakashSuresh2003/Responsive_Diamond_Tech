@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p>Copyright © 2021 - Diamond Technologies. Design by Aakash</p>
+        <p>Copyright © 2024 - Diamond Technologies. Design by Aakash</p>
         <div className="social-icons">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
             <FaFacebookF />

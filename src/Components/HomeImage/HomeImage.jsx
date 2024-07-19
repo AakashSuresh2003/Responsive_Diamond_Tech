@@ -8,8 +8,6 @@ export const HomeImage = () => {
       <div className='imageCom'>
         <img src={laser} alt="HomeImage" width="100%" height="100%"/>
     </div>
-    <div className='categories'>
-    </div>
     </div>
   )
 }
