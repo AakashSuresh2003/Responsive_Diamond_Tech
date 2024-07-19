@@ -1,43 +1,59 @@
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.MuiTextField-root {
+  width: 100%;
+  margin: 8px 0; 
+}
+
+@media (max-width: 768px) {
   .modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
     width: 90%;
-    max-width: 500px;
-    position: relative;
+    max-width: none;
+    max-height: 60vh; 
+    overflow-y: auto; 
+    padding-top: 10%;
   }
-  
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
+
+  .modal-overlay {
+    padding-bottom: 40%;
   }
-  
-  .submit-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+
+  .MuiTextField-root {
+    width: calc(100% - 20px); /* Adjust width as needed */
+    margin: 5px 10px; 
   }
-  
-  @media (max-width: 768px) {
-    .modal-content {
-      width: 90%;
-      max-width: none;
-    }
-  }
-  
+}
