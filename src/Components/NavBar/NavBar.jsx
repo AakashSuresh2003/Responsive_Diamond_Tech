@@ -9,13 +9,14 @@ const links = [
   { text: "Stone Processing Machines", href: "/" },
   { text: "Laser Machines", href: "/" },
   { text: "About Us", href: "#aboutus" },
-  { text: "Service", href: "/" },
+  { text: "Services", href: "/" },
   { text: "Contact Us", href: "#contactus" },
 ];
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -30,28 +31,21 @@ export const NavBar = () => {
     }
   };
 
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
-    <div className={`header ${scrolled ? "scrolled" : ""}`}>
-      <div className={`head ${scrolled ? "hidden" : ""}`}>
-        <ul className="Address">
-          <li>
-            Gem industries, No; 140, G.N.T.Road, Puzhal, Chennai- 600066.
-          </li>
-          <li>
-            Call us : +91 7299211777, 9340011444
-          </li>
-          <li>
-            Email : diamond_tech@yahoo.com
-          </li>
-        </ul>
-      </div>
+    <div className={`header ${scrolled ? "scrolled" : ""}`} style={{ position: "fixed", top: 0, width: "100%", zIndex: 1000 }}>
       <nav className="options navbar navbar-expand-md navbar-dark">
         <div className="container-fluid ">
           <a className="navbar-brand" href="/">
