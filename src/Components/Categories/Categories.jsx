@@ -3,17 +3,17 @@ import './Categories.css';
 
 export const Categories = () => {
   return (
-    <div className={`container-fluid categories-container`}>
+    <div className="container"> {/* Added mt-70vh class */}
       <div className="text-center categories-header">
         <h1>We Deal In</h1>
       </div>
       <div className="categories-content">
-        <div className="category-item"> 
+        <div className="category-item">
           <div className="category-card">
             <img
               className="category-image"
               src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
-              alt="product"
+              alt="Wood Processing"
             />
             <h2 className="category-title">Wood Pressing machines</h2>
           </div>
@@ -23,7 +23,7 @@ export const Categories = () => {
             <img
               className="category-image"
               src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
-              alt="product"
+              alt="Stone Processing"
             />
             <h2 className="category-title">Stone Processing Machines</h2>
           </div>
@@ -33,7 +33,7 @@ export const Categories = () => {
             <img
               className="category-image"
               src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
-              alt="product"
+              alt="Laser Machines"
             />
             <h2 className="category-title">Laser Machines</h2>
           </div>
