@@ -16,7 +16,7 @@ const links = [
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1024);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -32,7 +32,7 @@ export const NavBar = () => {
   };
 
   const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
+    setIsMobile(window.innerWidth <= 1024);
   };
 
   useEffect(() => {
@@ -46,19 +46,26 @@ export const NavBar = () => {
 
   return (
     <div className={`header ${scrolled ? "scrolled" : ""}`} style={{ position: "fixed", top: 0, width: "100%", zIndex: 1000 }}>
-      <nav className="options navbar navbar-expand-md navbar-dark">
+      <nav className="options navbar navbar-expand-xl navbar-dark"> 
         <div className="container-fluid ">
           <a className="navbar-brand" href="/">
             <img src={logo} alt="logo" className="logo" />
           </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            onClick={toggleMenu}
-          >
-            <FaBars />
-          </button>
-          <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
+          {isMobile && ( 
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" 
+              aria-controls="navbarNav"
+              aria-expanded={isOpen}
+              aria-label="Toggle navigation"
+              onClick={toggleMenu}
+            >
+              <FaBars />
+            </button>
+          )}
+          <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`} id="navbarNav"> 
             <ul className="navbar-nav ml-auto">
               {links.map((link, index) => (
                 <li key={index} className="nav-item">

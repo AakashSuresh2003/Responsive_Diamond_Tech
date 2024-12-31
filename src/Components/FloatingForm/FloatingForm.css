@@ -9,15 +9,18 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow: hidden; /* Prevents scrolling of the overlay */
 }
 
 .modal-content {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  width: 90%;
+  width: 70%;
   max-width: 500px;
   position: relative;
+  max-height: 100vh;  /* Restrict modal height */
+  margin: 0 auto;
 }
 
 .close-button {
@@ -38,6 +41,7 @@
   width: 100%;
   margin: 8px 0; 
 }
+
 
 @media (max-width: 768px) {
   .modal-content {

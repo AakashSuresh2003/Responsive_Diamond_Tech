@@ -13,5 +13,14 @@
   .imageCom {
     height: 40%;
     margin-top: 3.5vh;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 1024px) {
+  .imageCom {
+    height: 40%;
+    margin-top: 3.5vh;
+    object-fit: cover;
   }
 }
