@@ -29,11 +29,12 @@
 .aboutus_text {
   display: block;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-family: "Abel", sans-serif;
   font-weight: 400;
   padding-top: 3%;
   padding-bottom: 3%;
+  text-align: justify;
 }
 
 @media (max-width: 768px) {
@@ -50,6 +51,7 @@
     font-size: 1.2rem;
     padding-left: 5%;
     padding-right: 5%;
+    text-align: justify;
   }
 }
 
@@ -64,8 +66,9 @@
   }
 
   .aboutus_text {
-    font-size: 1rem;
-    padding-left: 2%;
-    padding-right: 2%;
+    font-size: 1.1rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;
   }
 }

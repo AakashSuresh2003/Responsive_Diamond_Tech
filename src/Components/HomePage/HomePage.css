@@ -1,5 +1,6 @@
 .home-image-container {
   margin-top: 70px;
+  position: absolute;
 }
 
 .categories-container {

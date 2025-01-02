@@ -3,7 +3,7 @@ import './Categories.css';
 
 export const Categories = () => {
   return (
-    <div className="container"> {/* Added mt-70vh class */}
+    <div className="container"> 
       <div className="text-center categories-header">
         <h1>We Deal In</h1>
       </div>
@@ -15,7 +15,7 @@ export const Categories = () => {
               src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
               alt="Wood Processing"
             />
-            <h2 className="category-title">Wood Pressing machines</h2>
+            <h2 className="category-title">Wood Processing machines</h2>
           </div>
         </div>
         <div className="category-item">

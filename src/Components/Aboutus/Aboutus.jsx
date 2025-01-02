@@ -1,5 +1,6 @@
 import React from "react";
 import "./Aboutus.css";
+import Button from "@mui/material/Button";
 
 export const Aboutus = () => {
   return (
@@ -14,18 +15,23 @@ export const Aboutus = () => {
         />
       </div>
       <span className="aboutus_text">
-        Satisfying the requirements of our customers and commitment to
-        high-quality products are the principles which form the cornerstone of
-        dummy company. This policy has remained unchanged throughout the history
-        of our organization. We have established a reputation for being the
-        leading machine tools dealer in area, city, state. We offer a
-        comprehensive range of machine tools. This range includes a wide variety
-        of sophistication including computer numerical controls, automatic
-        in-process gauging and other material handling automation, depending on
-        the customer need and application. With world class manufacturing
-        facilities and a team of experienced professionals, we offer high
-        quality products at the most economical prices.
+        A subsidiary of VTP Groups, we've been a trusted name in the trading
+        industry since 1969. Over the years, we have acquired vast expertise in
+        the field of wood-related works. Building on this strong foundation,
+        we've expanded our expertise into the field of machinery. Today, we are
+        proud to be recognized for our commitment to quality and affordable
+        pricing in the field of machineries ensuring that our customers receive
+        excellent value for their investment. At Diamond Technologies, we
+        understand that purchasing machinery is a significant investment for any
+        business. That’s why we focus on quality and affordable pricing—so our
+        customers can get the most out of their investments. Our machinery is
+        built to last, designed for optimal performance, and priced to suit your
+        budget. We’re proud to be a partner who helps you achieve your goals
+        efficiently and reliably.
       </span>
+      <Button variant="outlined" size="large">
+        Know More
+      </Button>
     </div>
   );
 };

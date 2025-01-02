@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaBars } from "react-icons/fa";
 import "./NavBar.css";
@@ -8,7 +9,7 @@ const links = [
   { text: "Wood Processing Machines", href: "/" },
   { text: "Stone Processing Machines", href: "/" },
   { text: "Laser Machines", href: "/" },
-  { text: "About Us", href: "#aboutus" },
+  { text: "About Us", href: "/aboutus" },  
   { text: "Services", href: "/" },
   { text: "Contact Us", href: "#contactus" },
 ];
@@ -69,9 +70,9 @@ export const NavBar = () => {
             <ul className="navbar-nav ml-auto">
               {links.map((link, index) => (
                 <li key={index} className="nav-item">
-                  <a className="nav-link " href={link.href}>
+                  <Link className="nav-link" to={link.href}>  
                     {link.text}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
