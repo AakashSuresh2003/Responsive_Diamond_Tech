@@ -35,7 +35,7 @@ export const ContactUs = () => {
             <li>
               <span className="contact_label">Our Office Address:</span>
               <span className="contact_value">
-                Gem industries, No; 140, G.N.T.Road, Puzhal, Chennai- 600066.
+                VTP Towers, No.206, G.N.T.Road, Erukkancheri, Chennai- 600118.
               </span>
             </li>
             <li>
@@ -44,7 +44,7 @@ export const ContactUs = () => {
             </li>
             <li>
               <span className="contact_label">Email:</span>
-              <span className="contact_value">diamond_tech@yahoo.com</span>
+              <span className="contact_value">diamond_technologies@outlook.com</span>
             </li>
             <li>
               <span className="contact_label">Our timing:</span>
