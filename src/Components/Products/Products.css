@@ -2,6 +2,8 @@
 
 .Products {
   perspective: 1000px;
+  margin-left: -170px ;
+  margin-right: -170px ;
 }
 
 .head_title {
@@ -75,6 +77,12 @@
 }
 
 @media (max-width: 1024px) {
+  .Products {
+    perspective: 1000px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .head_title {
     font-size: 2rem;
   }
@@ -92,7 +100,10 @@
 
 @media (max-width: 768px) {  
   .Products {
+  perspective: 1000px;
   padding-top: 10%;
+  margin-left: 0;
+  margin-right: 0;
 }
   .head_title {
     font-size: 2rem;

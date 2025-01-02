@@ -16,6 +16,8 @@
   justify-content: space-between;
   align-items: flex-start;
   padding-top: 2%;
+  margin-left: -10%;
+  margin-right: -10%;
 }
 
 .map_container {
@@ -96,6 +98,10 @@ iframe {
     width: 100%;
     justify-content: center;
   }
+  .content_wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 576px) {
@@ -109,5 +115,9 @@ iframe {
 
   .contact_value {
     font-size: 1rem;
+  }
+  .content_wrapper {
+    margin-left: 0;
+    margin-right: 0;
   }
 }

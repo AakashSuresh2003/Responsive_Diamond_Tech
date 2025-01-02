@@ -10,7 +10,7 @@
 .aboutus_container {
   text-align: center;
   padding: 0 10%;
-  padding-top: 1%;
+  padding-top: 5%;
 }
 
 .aboutus_img_container {
@@ -35,6 +35,8 @@
   padding-top: 3%;
   padding-bottom: 3%;
   text-align: justify;
+  margin-left: -180px;
+  margin-right: -180px;
 }
 
 @media (max-width: 768px) {
@@ -52,6 +54,8 @@
     padding-left: 5%;
     padding-right: 5%;
     text-align: justify;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
@@ -70,5 +74,14 @@
     padding-left: 5%;
     padding-right: 5%;
     text-align: justify;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .aboutus_text {
+    margin-left: -50px;
+    margin-right: -50px;
   }
 }

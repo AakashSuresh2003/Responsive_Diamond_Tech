@@ -9,8 +9,7 @@ import {Products} from "../Products/Products"
 import { Footer } from "../Footer/Footer";
 
 export const HomePage = () => (
-  <div className="container-fluid p-0">
-    <NavBar />
+  <div className="container-flex p-0">
     <HomeImage />
     <Categories />
     <Products />

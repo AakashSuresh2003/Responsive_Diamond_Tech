@@ -1,6 +1,5 @@
 import React from "react";
 import "./Aboutus.css";
-import Button from "@mui/material/Button";
 
 export const Aboutus = () => {
   return (
@@ -29,9 +28,6 @@ export const Aboutus = () => {
         budget. We’re proud to be a partner who helps you achieve your goals
         efficiently and reliably.
       </span>
-      <Button variant="outlined" size="large">
-        Know More
-      </Button>
     </div>
   );
 };
