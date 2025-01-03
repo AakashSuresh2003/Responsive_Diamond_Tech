@@ -216,7 +216,7 @@ export const HomePage = () => {
                 </span>
               </li>
             </ul>
-            <div className="btn-contactUs">
+            <div className="btn-contactUs" >
               <Button variant="outlined" size="large" onClick={handleOpenModal}>
                 Enquire
               </Button>
