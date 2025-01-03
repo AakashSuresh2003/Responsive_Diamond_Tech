@@ -5,6 +5,7 @@ import { HomePage } from "../src/Components/HomePage/HomePage";
 import AboutsUSDetailed from "./Components/AboutsUSDetailed/AboutsUSDetailed";
 import NavBar from "./Components/NavBar/NavBar";
 import { Footer } from "./Components/Footer/Footer";
+import SubcategoryList from "./Components/CategoriesComponent/CategoriesComponent";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/aboutus" element={<AboutsUSDetailed />} />
+          <Route path="/categories/:categoryId/subcategories" element={<SubcategoryList />} />
         </Routes>
       </div>
       <Footer />

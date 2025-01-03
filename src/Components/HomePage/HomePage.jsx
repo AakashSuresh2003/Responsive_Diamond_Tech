@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./HomePage.css";
 import laser from "../../assets/laser.jpg";
 import Slider from "react-slick";
@@ -41,6 +42,8 @@ const PrevArrow = (props) => {
 };
 
 export const HomePage = () => {
+  const navigate = useNavigate(); 
+
   const settings = {
     infinite: true,
     speed: 500,
@@ -88,6 +91,20 @@ export const HomePage = () => {
     setIsModalOpen(false);
   };
 
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4001/api/v1/categories")
+      .then((response) => response.json())
+      .then((data) => setCategories(data)) 
+      .catch((error) => console.error("Error fetching categories:", error));
+  }, []);
+
+
+  const handleCategoryClick = (categoryId) => {
+      navigate(`/categories/${categoryId}/subcategories/`);
+  };  
+
   return (
     <div className="container-flex p-0">
       <div className="imageCom">
@@ -98,36 +115,19 @@ export const HomePage = () => {
           <h1>We Deal In</h1>
         </div>
         <div className="categories-content">
-          <div className="category-item">
-            <div className="category-card">
-              <img
-                className="category-image"
-                src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
-                alt="Wood Processing"
-              />
-              <h2 className="category-title">Wood Processing machines</h2>
-            </div>
-          </div>
-          <div className="category-item">
-            <div className="category-card">
-              <img
-                className="category-image"
-                src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
-                alt="Stone Processing"
-              />
-              <h2 className="category-title">Stone Processing Machines</h2>
-            </div>
-          </div>
-          <div className="category-item">
-            <div className="category-card">
-              <img
-                className="category-image"
-                src="https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png"
-                alt="Laser Machines"
-              />
-              <h2 className="category-title">Laser Machines</h2>
-            </div>
-          </div>
+            {categories.map((category, index) => (
+              console.log(category),
+              <div key={index} className="category-item">
+                <div className="category-card" onClick={() => handleCategoryClick(category._id)}>
+                  <img
+                    className="category-image"
+                    src={`http://localhost:4001${category.categoryImage}`} 
+                    alt={category.categoryName}
+                  />
+                  <h2 className="category-title">{category.categoryName}</h2>
+                </div>
+              </div>
+            ))}
         </div>
       </div>
       <div className="Products">
@@ -216,7 +216,7 @@ export const HomePage = () => {
                 </span>
               </li>
             </ul>
-            <div className="btn-contactUs" >
+            <div className="btn-contactUs">
               <Button variant="outlined" size="large" onClick={handleOpenModal}>
                 Enquire
               </Button>

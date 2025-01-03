@@ -5,7 +5,7 @@ import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import ReCAPTCHA from "react-google-recaptcha";
-import CircularProgress from "@mui/material/CircularProgress"; // Import CircularProgress for loader
+import CircularProgress from "@mui/material/CircularProgress"; 
 
 const FloatingFormModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -67,7 +67,7 @@ const FloatingFormModal = ({ isOpen, onClose }) => {
     if (captchaVerified && validateForm()) {
       setLoading(true); 
       try {
-        const response = await fetch("https://diamond-tech-backend-pawy6og0k-aakashsuresh2003s-projects.vercel.app/submit-form", {
+        const response = await fetch("http://localhost:4001/api/v1/submit-form", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
