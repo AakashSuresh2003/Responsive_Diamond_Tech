@@ -6,9 +6,10 @@ import "./NavBar.css";
 import logo from "../../assets/logo.png";
 
 const links = [
-  { text: "Wood Processing Machines", href: "/" },
-  { text: "Stone Processing Machines", href: "/" },
+  { text: "Wood Processing", href: "/" },
+  { text: "Stone Processing", href: "/" },
   { text: "Laser Machines", href: "/" },
+  { text: "Tools & spares", href: "/" },
   { text: "About Us", href: "/aboutus" },  
   { text: "Services", href: "/" },
   { text: "Contact Us", href: "#contactus" },

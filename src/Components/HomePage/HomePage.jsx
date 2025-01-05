@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 import laser from "../../assets/laser.jpg";
 import Slider from "react-slick";
@@ -42,7 +42,7 @@ const PrevArrow = (props) => {
 };
 
 export const HomePage = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const settings = {
     infinite: true,
@@ -96,14 +96,14 @@ export const HomePage = () => {
   useEffect(() => {
     fetch("http://localhost:4001/api/v1/categories")
       .then((response) => response.json())
-      .then((data) => setCategories(data)) 
+      .then((data) => setCategories(data))
       .catch((error) => console.error("Error fetching categories:", error));
   }, []);
 
-
-  const handleCategoryClick = (categoryId) => {
-      navigate(`/categories/${categoryId}/subcategories/`);
-  };  
+  const handleCategoryClick = (categoryId, categoryName) => {
+    localStorage.setItem("selectedCategory", categoryName);
+    navigate(`/categories/${categoryId}/subcategories/`);
+  };
 
   return (
     <div className="container-flex p-0">
@@ -115,19 +115,23 @@ export const HomePage = () => {
           <h1>We Deal In</h1>
         </div>
         <div className="categories-content">
-            {categories.map((category, index) => (
-              console.log(category),
-              <div key={index} className="category-item">
-                <div className="category-card" onClick={() => handleCategoryClick(category._id)}>
-                  <img
-                    className="category-image"
-                    src={`http://localhost:4001${category.categoryImage}`} 
-                    alt={category.categoryName}
-                  />
-                  <h2 className="category-title">{category.categoryName}</h2>
-                </div>
+          {categories.map((category, index) => (
+            <div key={index} className="category-item">
+              <div
+                className="category-card"
+                onClick={() =>
+                  handleCategoryClick(category._id, category.categoryName)
+                }
+              >
+                <img
+                  className="category-image"
+                  src={`http://localhost:4001${category.categoryImage}`}
+                  alt={category.categoryName}
+                />
+                <h2 className="category-title">{category.categoryName}</h2>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
       <div className="Products">

@@ -7,6 +7,15 @@ const SubcategoryList = () => {
   const [subcategories, setSubcategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [categoryName, setCategoryName] = useState('');
+
+
+  useEffect(() => {
+    const storedCategoryName = localStorage.getItem('selectedCategory');
+    if (storedCategoryName) {
+      setCategoryName(storedCategoryName);
+    }
+  }, []);
 
   useEffect(() => {
     const fetchSubcategories = async () => {
@@ -20,7 +29,7 @@ const SubcategoryList = () => {
         }
 
         const data = await response.json();
-
+        console.log(data);
         setSubcategories(data);
       } catch (err) {
         setError(err.message);
@@ -39,9 +48,10 @@ const SubcategoryList = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-
+  
   return (
     <div className="subcategory-container">
+      <h1 className="category-name">{categoryName}</h1>
       <div className="subcategory-list">
         {subcategories.length > 0 ? (
           subcategories.map((subcategory) => (
@@ -53,7 +63,7 @@ const SubcategoryList = () => {
               />
               <h4>{subcategory.subCategoryName}</h4>
               <div className="buttons-container">
-                <button className="button view-details">View Details</button>
+                <button className="button view-details">View Products</button>
                 <button className="button watch-video">Watch Video</button>
               </div>
             </div>
