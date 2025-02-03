@@ -1,0 +1,96 @@
+.product-list-container {
+  padding: 20px;
+  min-height: 100vh;
+  padding-top: 5.5rem;
+}
+
+.product-list-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: center;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: calc(25% - 20px);
+  min-width: 60vh;
+  max-width: 70vh;
+  min-height: 60vh;
+  max-height: 70vh;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-card .button {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.product-card .button:hover {
+  background-color: #0056b3;
+}
+
+.product-card .button:focus {
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .product-image {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .product-card {
+    min-width: 40vh;
+    max-width: 50vh;
+    min-height: 40vh;
+    max-height: 50vh;
+  }
+
+  .product-list {
+    gap: 2rem;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import './CategoriesComponent.css';
 
 const SubcategoryList = () => {
@@ -8,7 +8,7 @@ const SubcategoryList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [categoryName, setCategoryName] = useState('');
-
+  const navigate = useNavigate(); // Hook to navigate to a different route
 
   useEffect(() => {
     const storedCategoryName = localStorage.getItem('selectedCategory');
@@ -29,7 +29,6 @@ const SubcategoryList = () => {
         }
 
         const data = await response.json();
-        console.log(data);
         setSubcategories(data);
       } catch (err) {
         setError(err.message);
@@ -41,6 +40,13 @@ const SubcategoryList = () => {
     fetchSubcategories();
   }, [categoryId]);
 
+  const handleViewProducts = (subcategoryId) => {
+    console.log(subcategoryId);
+    console.log(categoryId);
+    // Navigate to the Product List page for the selected subcategory
+    navigate(`/category/${categoryId}/subcategory/${subcategoryId}/products`);
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -48,11 +54,12 @@ const SubcategoryList = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-  
+
   return (
     <div className="subcategory-container">
       <h1 className="category-name">{categoryName}</h1>
       <div className="subcategory-list">
+        {console.log(subcategories)}
         {subcategories.length > 0 ? (
           subcategories.map((subcategory) => (
             <div key={subcategory._id} className="subcategory-card">
@@ -63,7 +70,11 @@ const SubcategoryList = () => {
               />
               <h4>{subcategory.subCategoryName}</h4>
               <div className="buttons-container">
-                <button className="button view-details">View Products</button>
+                <button 
+                  className="button view-details" 
+                  onClick={() => handleViewProducts(subcategory._id)}>
+                  View Products
+                </button>
                 <button className="button watch-video">Watch Video</button>
               </div>
             </div>
