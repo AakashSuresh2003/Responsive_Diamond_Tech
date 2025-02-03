@@ -9,7 +9,7 @@ const links = [
   { text: "Wood Processing", href: "/" },
   { text: "Stone Processing", href: "/" },
   { text: "Laser Machines", href: "/" },
-  { text: "Tools & spares", href: "/" },
+  { text: "Tools & Spares", href: "/" },
   { text: "About Us", href: "/aboutus" },  
   { text: "Services", href: "/" },
   { text: "Contact Us", href: "#contactus" },
